@@ -1,0 +1,62 @@
+void DESCONECTAR_FORD(){
+  lcd.clear();
+  delay(1500);
+  lcd.setCursor(0,0);
+  lcd.print("INICIANDO");
+  lcd.setCursor(0,1);
+  lcd.print ("DESCONEXION");     
+  delay (1000);
+  lcd.clear();
+  delay(500);
+  lcd.setCursor(0,0);
+  lcd.print("DESCONECTANDO");
+  lcd.setCursor(0,1);
+  lcd.print ("GENERADOR");
+  delay(2000);     
+  lcd.clear();
+  delay (1000);
+  digitalWrite (RELE2,HIGH);
+  delay(5000);
+  lcd.clear();
+  lcd.setCursor(0,0);
+  lcd.print("APAGANDO");
+  lcd.setCursor(0,1);
+  lcd.print ("GENERADOR");
+  delay(1000);     
+  lcd.clear();
+  delay (2000);
+  digitalWrite (RELE3,HIGH);
+  delay(500);
+  lcd.clear();
+  lcd.setCursor(0,0);
+  lcd.print("ACTIVANDO");
+  lcd.setCursor(0,1);
+  lcd.print ("RED ICE");
+  delay(3000);    
+  lcd.clear(); 
+  digitalWrite (RELE1,LOW);
+  delay(6000);
+  RELOJ ();
+  ESTABLECER_MANTENIMIENTO();
+}
+
+void DESCONECTAR_FORD_MANTE(){
+  lcd.clear();
+  lcd.setCursor(0,0);
+  lcd.print("TERMINA");
+  lcd.setCursor(0,1);
+  lcd.print ("MANTENIMIENTO");
+  delay(1000);
+  lcd.clear();
+  lcd.setCursor(0,0);
+  lcd.print("APAGANDO");
+  lcd.setCursor(0,1);
+  lcd.print ("GENERADOR");
+  delay(1000);     
+  lcd.clear();
+  delay (2000);
+  digitalWrite (RELE3,HIGH);
+  delay(500);
+  GENERADOR_MANTE_ON = false;
+  INICIAR_MANTE = false;
+}
